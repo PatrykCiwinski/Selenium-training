@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 # price=browser.find_element(By.ID, "corePrice_feature_div")
 # print(price.text)
 
-
 browser=webdriver.Chrome()
 browser.get("https://en.wikipedia.org/wiki/Beer")
 beer_portal_link=browser.find_element(By.XPATH, '//*[@id="mw-content-text"]/div[1]/div[34]/ul/li[1]/span[2]/a')
