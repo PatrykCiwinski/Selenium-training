@@ -6,9 +6,20 @@ from selenium.webdriver.common.by import By
 # price=browser.find_element(By.ID, "corePrice_feature_div")
 # print(price.text)
 
-browser=webdriver.Chrome()
-browser.get("https://en.wikipedia.org/wiki/Beer")
-beer_portal_link=browser.find_element(By.XPATH, '//*[@id="mw-content-text"]/div[1]/div[34]/ul/li[1]/span[2]/a')
-print(beer_portal_link.text)
+# browser=webdriver.Chrome()
+# browser.get("https://en.wikipedia.org/wiki/Beer")
+# beer_portal_link=browser.find_element(By.XPATH, '//*[@id="mw-content-text"]/div[1]/div[34]/ul/li[1]/span[2]/a')
+# print(beer_portal_link.text)
+#
+# browser.quit()
 
-browser.quit()
+browser=webdriver.Chrome()
+browser.get("https://www.python.org/")
+upcoming_events_time=browser.find_elements(By.CSS_SELECTOR, '.event-widget time')
+upcoming_events_names=browser.find_elements(By.CSS_SELECTOR, '.event-widget li a')
+
+upcoming_events={}
+for i in range(len(upcoming_events_time)):
+    upcoming_events[i]={"time": upcoming_events_time[i].text, "event": upcoming_events_names[i].text}
+
+print(upcoming_events)
